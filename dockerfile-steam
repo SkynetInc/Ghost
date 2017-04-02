@@ -1,0 +1,6 @@
+FROM ghost
+
+# Copy App
+# ADD ./www /usr/share/nginx/html
+
+EXPOSE 2368

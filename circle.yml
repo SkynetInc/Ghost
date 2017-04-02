@@ -1,0 +1,43 @@
+machine:
+  node:
+    version: v6.10.1
+  environment:
+  services:
+    - docker
+
+checkout:
+  post:
+  - git submodule sync --recursive
+  - git submodule update --recursive --init
+
+dependencies:
+  cache_directories:
+    - ~/.meteor
+    - ~/.npm
+  override:
+
+  post:
+    # - npm install
+
+
+
+test:
+  pre:
+  override:
+    # - npm run-script test:ci
+    - ls -la
+  post:
+
+deployment:
+  prod:
+    branch: develop
+    commands:
+      # - npm run meteor-client:bundle
+      # - npm run ionic:build
+      # - cd ~/become/api && meteor build --directory . --server http://develop.platform.become.ai
+      # - cd ~/become/api/bundle/programs/server && npm install
+      # build node server
+      - docker build -f dockerfile-steam -t $AWS_ACCOUNT_ID.dkr.ecr.ap-southeast-2.amazonaws.com/become/steam:$CIRCLE_SHA1 .
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.ap-southeast-2.amazonaws.com/become/steam:$CIRCLE_SHA1
+      # deploy
+      - node deploy-steam.js
