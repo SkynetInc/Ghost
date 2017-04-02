@@ -1,0 +1,53 @@
+<!-- Footer -->
+<footer class="base-footer">
+    <div class="container container-footer">
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <h4>About Us</h4>
+                <p>Meet our professionals they are passonate about alternative education as well as activities that will give your child the skills they need to make it in the workplace</p>
+                <ul class="list-unstyled no-list-style">
+                    <li>
+                      <span class="color-white">Location: </span>
+                      <a href="https://www.google.com.au/maps/place/TinkerTank/@-33.7977035,151.2855574,17z/data=!3m1!4b1!4m5!3m4!1s0x6b12ab0f14930cff:0xb1cf20f0398f8516!8m2!3d-33.7977035!4d151.2877461">
+                        29 Rialto Lane, Manly, NSW, 2095
+                      </a>
+                    </li>
+                    <li><span class="color-white">Tel: </span><a href="tel://1300%20670%20104">1300 670 104</a></li>
+                    <li><span class="color-white">Email: </span><a href="mailto:info@tinkertank.com.au">info@tinkertank.com.au</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <h4>Information</h4>
+                <ul class="list-unstyled">
+                  <li class="nav-robotics{{#if current}} nav-current{{/if}}" role="presentation"><a href="http://steamtank.tinkertank.ai/robotics/">Robotics</a></li>
+                  <li class="nav-coding{{#if current}} nav-current{{/if}}" role="presentation"><a href="http://steamtank.tinkertank.ai/coding/">Coding</a></li>
+                  <li class="nav-design{{#if current}} nav-current{{/if}}" role="presentation"><a href="http://steamtank.tinkertank.ai/design/">Design</a></li>
+                  <li class="nav-shop{{#if current}} nav-current{{/if}}" role="presentation"><a href="https://app.tinkertank.ai/?source=sales">Shop</a></li>
+
+                    <!-- {{#foreach @blog.navigation}}
+                    http://steamtank.tinkertank.ai/robotics/
+                    <li>http://steamtank.tinkertank.ai/robotics/
+                    <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{{label}}}</a></li>
+                    {{/foreach}} -->
+                </ul>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <h4>Need Help?</h4>
+                <p>Can't find what you are looking for? Have questions? We are here to help!</p>
+                <p><a href="#" onclick="Intercom('showNewMessage')">Click Here</a></p>
+
+            </div>
+        </div>
+    </div>
+    <div class="container copy">
+        <div class="row">
+            <div class="col-sm-6 col-md-6">
+                <p><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}. All Rights Reserved.</p>
+            </div>
+            <div class="col-sm-6 col-md-6 text-right">
+                {{> social}}
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- /Footer -->

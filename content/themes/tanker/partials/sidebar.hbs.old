@@ -1,0 +1,7 @@
+<aside class="col-md-4 sidebar">
+    {{> widget-recentpost}}
+    {{> widget-text}}
+    {{> widget-featuredpost}}
+    {{> widget-facebook}}
+    {{> widget-twitter}}
+</aside>
